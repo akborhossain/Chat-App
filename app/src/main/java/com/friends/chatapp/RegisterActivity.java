@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -43,20 +44,13 @@ public class RegisterActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Register");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        date_of_birth="9-Jan-1999";
+        date_of_birth="9-Jan-1998";
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn_register = findViewById(R.id.btn_register);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-            // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.planets_array, android.R.layout.simple_spinner_item);
-            // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+
 
 
         auth = FirebaseAuth.getInstance();
@@ -77,6 +71,23 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    //Gender button
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.male:
+                if (checked)
+                    // Pirates are the best
+                    break;
+            case R.id.female:
+                if (checked)
+                    // Ninjas rule
+                    break;
+        }
     }
 
     public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {

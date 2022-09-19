@@ -32,12 +32,23 @@
             android:hint="Username"
             app:met_floatingLabel="normal" />
 
-        <Spinner
-            android:id="@+id/spinner"
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Female"
+                android:onClick="onRadioButtonClicked"/>
 
-            />
+        </RadioGroup>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/email"
