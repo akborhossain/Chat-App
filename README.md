@@ -1,3 +1,3 @@
 # Chat-App
-Chat app Android app
-this is private
+Chat app Android app.
+this is private.
